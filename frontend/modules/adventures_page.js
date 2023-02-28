@@ -83,10 +83,9 @@ function addAdventureToDOM(adventures) {
 function filterByDuration(list, low, high) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on Duration and return filtered list
-  let filteredList = list.filter(function(ob){
-    if(ob.duration>=low && ob.duration<=high)
-      return true;
-  })
+  let filteredList = list.filter(function (ob) {
+    if (ob.duration >= low && ob.duration <= high) return true;
+  });
   console.log(filteredList);
   return filteredList;
 }
@@ -131,7 +130,7 @@ function filterFunction(list, filters) {
 function saveFiltersToLocalStorage(filters) {
   // TODO: MODULE_FILTERS
   // 1. Store the filters as a String to localStorage
-  localStorage.setItem("filters",JSON.stringify(filters));
+  localStorage.setItem("filters", JSON.stringify(filters));
   return true;
 }
 
@@ -151,7 +150,7 @@ function getFiltersFromLocalStorage() {
 function generateFilterPillsAndUpdateDOM(filters) {
   // TODO: MODULE_FILTERS
   // 1. Use the filters given as input, update the Duration Filter value and Generate Category Pills
-  let pills = document.getElementById("category-list");
+ let pills = document.getElementById("category-list");
   for (let filter of filters.category) {
     let pill = document.createElement("div");
     pill.setAttribute("class", "category-filter");
